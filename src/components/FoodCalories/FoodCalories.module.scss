@@ -1,0 +1,88 @@
+@import '../../styles/sass/variables';
+@import '../../styles/sass/mixins';
+
+.scrollBlock {
+    max-height: 655px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.scrollBlockDark {
+    max-height: 655px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-radius: 10px;
+    color: #FFFFFF;
+    margin-top: 15px;
+}
+
+.scrollBlock::-webkit-scrollbar {
+    width: 3px;
+    background: #FCFCFC;
+    opacity: 0.7;
+    border-radius: 2px;
+}
+
+.scrollBlock::-webkit-scrollbar-thumb {
+    width: 3px;
+    height: 15px;
+    background: $bgColorDark;
+    border-radius: 2px;
+}
+
+.scrollBlockDark::-webkit-scrollbar {
+    width: 3px;
+    background: #FCFCFC;
+    opacity: 0.7;
+    border-radius: 2px;
+}
+
+.scrollBlockDark::-webkit-scrollbar-thumb {
+    width: 3px;
+    height: 15px;
+    background: $bgColorDark;
+    border-radius: 2px;
+}
+
+.title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 65px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    border-bottom: 2px solid #EFEFEF;
+}
+
+.titleDark {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 65px;
+    width: 100%;
+    background: rgba(39, 39, 39, 0.7);
+    border-bottom: 2px solid #0e0d0d;
+
+}
+
+.spanBlock {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 25px;
+    @include text(16px, 19px, 500, normal);
+    font-family: $fontFamily;
+}
+
+.caloriesCalumn {
+    display: flex;
+    justify-content: flex-start;
+    width: 60px;
+}
+

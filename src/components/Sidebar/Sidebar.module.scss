@@ -1,0 +1,141 @@
+@import '../../styles/sass/mixins';
+
+.sidebar {
+    width: 430px;
+    position: sticky;
+    top: 70px;
+}
+
+.time {
+    padding-top: 46px;
+}
+
+.clock {
+    @include text(52px, 44px, 600, normal);
+    font-family: $fontFamily;
+    letter-spacing: 0.400345px;
+}
+
+.date {
+    @include text(22px, 26px, 500, normal);
+    font-family: $fontFamily;
+    letter-spacing: 0.45px;
+}
+
+.navigation {
+    padding-top: 122px;
+    width: 345px;
+    height: 200px;
+}
+
+.purpose {
+    height: 91px;
+    border-radius: 13px;
+    background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.3) 28.69%, rgba(255, 255, 255, 0.24) 100%);
+}
+
+.purposeDark {
+    height: 91px;
+    border-radius: 13px;
+    background: #262323;
+}
+
+.purposeScroll {
+    height: 91px;
+    width: 300px;
+    border-radius: 13px;
+    background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.3) 28.69%, rgba(255, 255, 255, 0.24) 100%);
+    opacity: 0.6;
+}
+
+.purposeScrollDark {
+    height: 91px;
+    width: 300px;
+    border-radius: 13px;
+    background: #000000;
+    opacity: 0.6;
+}
+
+.purposeContent {
+    padding: 23px 14px;
+    display: flex;
+}
+
+.purposeContentScroll {
+    padding: 23px 14px;
+    display: flex;
+    background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.3) 28.69%, rgba(255, 255, 255, 0.24) 100%);
+    border-radius: 13px;
+}
+
+.purposeContentScrollDark {
+    padding: 23px 14px;
+    display: flex;
+    background: #262323;
+    border-radius: 13px;
+}
+
+.circle {
+    background: #91C6A0;
+    clip-path: circle(50%);
+    height: 45px;
+    width: 45px;
+}
+
+.circleDark {
+    background: #42a5f5;
+    clip-path: circle(50%);
+    height: 45px;
+    width: 45px;
+}
+
+.purposeText {
+    text-wrap: normal;
+    padding-left: 16px;
+    @include text(19px, 26px, 600, normal);
+    font-family: $fontFamily;
+}
+
+.purposeText div {
+    @include text(15px, 26px, 500, normal);
+    font-family: $fontFamilyText;
+}
+
+.calculation {
+    padding-top: 24px;
+    height: 91px;
+    width: 300px;
+    opacity: 0.6;
+}
+
+.calculationScroll {
+    padding-top: 24px;
+    height: 91px;
+    width: 345px;
+}
+
+.calculationContent {
+    padding: 23px 14px;
+    display: flex;
+    background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.3) 28.69%, rgba(255, 255, 255, 0.24) 100%);
+    border-radius: 13px;
+}
+
+.calculationContentDark {
+    padding: 23px 14px;
+    display: flex;
+    background: #262323;
+    border-radius: 13px;
+}
+
+.calculationText {
+    text-wrap: normal;
+    padding-left: 16px;
+    @include text(19px, 26px, 600, normal);
+    font-family: $fontFamily;
+}
+
+.calculationText div {
+    @include text(15px, 26px, 500, normal);
+    font-family: $fontFamilyText;
+}

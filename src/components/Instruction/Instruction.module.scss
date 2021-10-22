@@ -1,0 +1,61 @@
+@import '../../styles/sass/mixins';
+
+.discriptionBlock {
+    background: url("../../assets/noise.png") 0 0/cover no-repeat rgba(241, 240, 232, 0.58);
+    max-width: 825px;
+    border-radius: 30px;
+    margin-top: 27px;
+}
+
+.discriptionBlockBlack {
+    background: url("../../assets/noiseDark.png") 0 0/cover no-repeat rgba(39, 39, 39, 0.7);
+    max-width: 825px;
+    border-radius: 30px;
+    margin-top: 27px;
+}
+
+.discription {
+    padding: 67px 87px;
+}
+
+.discription h1 {
+    @include text(50px, 60px, 600, normal);
+    font-family: $fontFamily;
+}
+
+.discription h2 {
+    @include text(32px, 30px, 600, normal);
+    font-family: $fontFamily;
+}
+
+.text {
+    padding-left: 15px;
+}
+
+.text p {
+    @include text(16px, 25px, 500, normal);
+    font-family: $fontFamily;
+}
+
+.text li {
+    padding-left: 6px;
+    @include text(16px, 25px, 500, normal);
+    font-family: $fontFamily;
+    list-style-type: decimal;
+}
+
+.discriptionHr {
+    margin-top: 23px;
+    width: 73px;
+    height: 2px;
+    background-color: #2A2A2A;
+    border: none;
+}
+
+.discriptionHrDark {
+    margin-top: 23px;
+    width: 73px;
+    height: 2px;
+    background-color: #FFFFFF;
+    border: none;
+}

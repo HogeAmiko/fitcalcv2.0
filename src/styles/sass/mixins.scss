@@ -1,0 +1,9 @@
+@import './variables.scss';
+
+@mixin text($fontSize, $lineHeight, $fontWeight, $fontStyle) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+  font-family: $fontFamily;
+}

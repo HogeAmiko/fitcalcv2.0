@@ -1,0 +1,49 @@
+@import '../../styles/sass/variables';
+@import '../../styles/sass/mixins';
+
+.scrollBlock {
+  height: 374px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  overflow-x: hidden;
+  border-radius: 10px;
+}
+
+.scrollBlock::-webkit-scrollbar {
+  width: 3px;
+  background: #FCFCFC;
+  opacity: 0.7;
+  border-radius: 2px;
+}
+
+.scrollBlock::-webkit-scrollbar-thumb {
+  width: 3px;
+  height: 15px;
+  background: $bgColorDark;
+  border-radius: 2px;
+}
+
+.foodTitle {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom: 2px solid #EFEFEF;;
+  padding-left: 35px;
+  @include text(16px, 19px, 500, normal);
+  font-family: $fontFamily;
+  border-radius: 10px;
+}
+
+.foodTitleDark {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  width: 100%;
+  background: rgba(39, 39, 39, 0.7);
+  border-bottom: 2px solid #0e0d0d;
+  padding-left: 35px;
+  @include text(16px, 19px, 500, normal);
+  font-family: $fontFamily;
+}

@@ -1,0 +1,72 @@
+@import '../../styles/sass/variables';
+@import '../../styles/sass/mixins';
+
+.input {
+    margin-top: 12px;
+    height: 45px;
+    width: 255px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    @include text(18px, 22px, 500, normal);
+    font-family: $fontFamily;
+    color: rgba(181, 181, 181, 0.85);
+    background: #FFFFFF;
+}
+
+.inputDark {
+    margin-top: 12px;
+    height: 45px;
+    width: 255px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    @include text(18px, 22px, 500, normal);
+    font-family: $fontFamily;
+    color: #FFFFFF;
+    background: $bgColorDark;
+}
+
+.labelNext {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+.labelNextDark {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    border: solid #FFFFFF;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+.labelPrev {
+    position: absolute;
+    bottom: 20px;
+    right: 255px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+}
+
+.labelPrevDark {
+    position: absolute;
+    bottom: 20px;
+    right: 245px;
+    border: solid #FFFFFF;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+}
