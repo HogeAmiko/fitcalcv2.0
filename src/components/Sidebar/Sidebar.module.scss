@@ -41,7 +41,7 @@
 }
 
 .purposeScroll {
-    height: 91px;
+
     width: 300px;
     border-radius: 13px;
     background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.3) 28.69%, rgba(255, 255, 255, 0.24) 100%);
@@ -62,28 +62,41 @@
 }
 
 .purposeContentScroll {
-    padding: 23px 14px;
+    padding: 16px 14px;
     display: flex;
-    background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.3) 28.69%, rgba(255, 255, 255, 0.24) 100%);
     border-radius: 13px;
 }
 
 .purposeContentScrollDark {
-    padding: 23px 14px;
+    padding: 16px 14px;
     display: flex;
     background: #262323;
     border-radius: 13px;
 }
 
-.circle {
+.circleFirst {
     background: #91C6A0;
     clip-path: circle(50%);
     height: 45px;
     width: 45px;
 }
 
-.circleDark {
+.circleSecond {
+    background: #74A9A1;
+    clip-path: circle(50%);
+    height: 45px;
+    width: 45px;
+}
+
+.circleFirstDark {
     background: #42a5f5;
+    clip-path: circle(50%);
+    height: 45px;
+    width: 45px;
+}
+
+.circleSecondDark {
+    background: #50BACB;
     clip-path: circle(50%);
     height: 45px;
     width: 45px;
@@ -94,11 +107,27 @@
     padding-left: 16px;
     @include text(19px, 26px, 600, normal);
     font-family: $fontFamily;
+    color: #000000;
 }
 
 .purposeText div {
     @include text(15px, 26px, 500, normal);
     font-family: $fontFamilyText;
+    color: #000000;
+}
+
+.purposeTextDark {
+    text-wrap: normal;
+    padding-left: 16px;
+    @include text(19px, 26px, 600, normal);
+    font-family: $fontFamily;
+    color: #FFFFFF;
+}
+
+.purposeTextDark div {
+    @include text(15px, 26px, 500, normal);
+    font-family: $fontFamilyText;
+    color: #FFFFFF;
 }
 
 .calculation {
@@ -115,14 +144,14 @@
 }
 
 .calculationContent {
-    padding: 23px 14px;
+    padding: 16px 14px;
     display: flex;
     background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.3) 28.69%, rgba(255, 255, 255, 0.24) 100%);
     border-radius: 13px;
 }
 
 .calculationContentDark {
-    padding: 23px 14px;
+    padding: 16px 14px;
     display: flex;
     background: #262323;
     border-radius: 13px;
@@ -138,4 +167,14 @@
 .calculationText div {
     @include text(15px, 26px, 500, normal);
     font-family: $fontFamilyText;
+}
+
+.navLink {
+    text-decoration: none;
+    color: black;
+}
+
+.navLink div {
+    color: $fontFamilyText;
+
 }

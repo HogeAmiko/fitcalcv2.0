@@ -1,12 +1,13 @@
 import style from './Instruction.module.scss';
+import { useContext } from 'react';
+import { ThemContext } from '../Main/Main';
 
-type themeInstructionType = {
-  theme: boolean
-}
+export function Instruction() {
 
-export function Instruction(props: themeInstructionType) {
+  const theme = useContext(ThemContext);
+
   return (
-    <div className={props.theme ? style.discriptionBlock : style.discriptionBlockBlack} id={'instruction'}>
+    <div className={theme ? style.discriptionBlock : style.discriptionBlockBlack} id={'instruction'}>
       <div className={style.discription}>
         <h1>Будь честен сам с собой</h1>
         <h2>Шаг 1. Выбери цель</h2>
@@ -44,8 +45,9 @@ export function Instruction(props: themeInstructionType) {
           <li>Чтобы увеличивать вес, ты должен потреблять больше калорий, находиться в избытке калорий.</li>
           Всё, никаких других вариантов развития событий науке не известно. Только эти два.
         </div>
-        <hr className={props.theme ? style.discriptionHr : style.discriptionHrDark}/>
+        <hr className={theme ? style.discriptionHr : style.discriptionHrDark}/>
       </div>
     </div>
   )
 }
+

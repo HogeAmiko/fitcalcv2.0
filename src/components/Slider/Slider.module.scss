@@ -14,10 +14,36 @@
     background: #FFFFFF;
 }
 
+.inputForGender {
+    margin-top: 12px;
+    height: 45px;
+    width: 120px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    @include text(18px, 22px, 500, normal);
+    font-family: $fontFamily;
+    color: rgba(181, 181, 181, 0.85);
+    background: #FFFFFF;
+}
+
 .inputDark {
     margin-top: 12px;
     height: 45px;
     width: 255px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    @include text(18px, 22px, 500, normal);
+    font-family: $fontFamily;
+    color: #FFFFFF;
+    background: $bgColorDark;
+}
+
+.inputForGenderDark {
+    margin-top: 12px;
+    height: 45px;
+    width: 120px;
     border: none;
     border-radius: 10px;
     text-align: center;

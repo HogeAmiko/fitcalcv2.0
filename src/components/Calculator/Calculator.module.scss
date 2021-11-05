@@ -2,14 +2,16 @@
 @import '../../styles/sass/mixins';
 
 .calculatorBlock {
-  margin-top: 70px;
-  max-width: 825px;
+  //margin-top: 50px;
+  width: 825px;
   border-radius: 30px;
   position: relative;
+  margin-bottom: 50px;
+
 }
 
 .calculator {
-  padding-top: 50px;
+  padding-top: 35px;
   padding-bottom: 25px;
   width: 100%;
   display: flex;
@@ -63,10 +65,22 @@
 .howToUseCover {
   position: absolute;
   top: 133px;
+  right: 66px;
+  margin-top: 25px;
+  border-radius: 30px;
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  filter: blur(5px);
+}
+
+.howToUseCoverDark {
+  position: absolute;
+  top: 139px;
   right: 68px;
   margin-top: 25px;
   border-radius: 30px;
   opacity: 0.5;
+  filter: blur(5px);
 }
 
 .howToUseBlock {
@@ -331,9 +345,11 @@
   border: none;
   border-radius: 10px;
   padding-left: 35px;
+  background: url("../../assets/searchField.png") 0 0/0 200px no-repeat rgba(241, 240, 232, 0.58);
   @include text(18px, 22px, 500, normal);
   font-family: $fontFamily;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  outline: none;
 }
 
 .searchInputDark {
@@ -342,10 +358,11 @@
   border: none;
   border-radius: 10px;
   padding-left: 35px;
+  background: url("../../assets/searchField.png") 0 0/0 200px no-repeat #272727;
   @include text(18px, 22px, 500, normal);
   font-family: $fontFamily;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  background: #272727;
+  outline: none;
 }
 
 .searchIcon {
@@ -381,6 +398,7 @@
   border-radius: 40px;
   background: url("../../assets/howUse.png") 50%/cover no-repeat rgba(241, 240, 232, 0.58);
   margin-top: 25px;
+  height: 805px;
 }
 
 .foodConfirmedDark {
@@ -388,6 +406,7 @@
   border-radius: 40px;
   background: url("../../assets/howUseDark.png") 50%/cover no-repeat #0e0d0d;
   margin-top: 25px;
+  height: 810px;
 }
 
 .foodConfirmedCover {
@@ -397,6 +416,8 @@
   border-radius: 36px;
   margin-top: 25px;
   opacity: 0.5;
+  mix-blend-mode: difference;
+  filter: blur(5px);
 }
 
 .foodConfirmedBlock {
@@ -433,9 +454,9 @@
   background: url("../../assets/noise.png") 0 0/cover no-repeat rgba(241, 240, 232, 0.58);
 }
 
-.btnComplete:active {
-  box-shadow: 0 2px 2px #008277;
-}
+//.btnComplete:active {
+//  box-shadow: 0 2px 2px #008277;
+//}
 
 .imgBtnRight {
   position: absolute;
@@ -445,6 +466,9 @@
   border-radius: 36px;
   @include text(24px, 29px, 500, normal);
   font-family: $fontFamily;
+  mix-blend-mode: difference;
+  z-index: 1;
+  filter: blur(5px);
 }
 
 .imgBtnLeft {
@@ -455,6 +479,9 @@
   border-radius: 36px;
   @include text(24px, 29px, 500, normal);
   font-family: $fontFamily;
+  mix-blend-mode: difference;
+  z-index: 1;
+  filter: blur(5px);
 }
 
 .btnCompleteDark {
@@ -464,8 +491,10 @@
   border-radius: 36px;
   @include text(24px, 29px, 500, normal);
   font-family: $fontFamily;
-  background: none;
+  //background: none;
+  border: none;
   color: #FFFFFF;
+  background: url("../../assets/howUseDark.png") 50%/cover no-repeat #0e0d0d;
 }
 
 .dietFinal {
@@ -486,6 +515,8 @@
   border-radius: 30px;
   position: absolute;
   opacity: 0.5;
+  mix-blend-mode: difference;
+  filter: blur(5px);
 }
 
 .dietDataBlock {

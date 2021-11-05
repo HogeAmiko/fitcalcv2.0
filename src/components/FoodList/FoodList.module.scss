@@ -47,3 +47,14 @@
   @include text(16px, 19px, 500, normal);
   font-family: $fontFamily;
 }
+
+.errorMessage {
+  width: 300px;
+  height: 100px;
+  position: relative;
+  top: 150px;
+  text-align: center;
+  @include text(16px, 19px, 500, normal);
+  font-family: $fontFamily
+  //left: 40px;
+}

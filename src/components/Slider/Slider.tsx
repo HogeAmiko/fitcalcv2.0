@@ -12,6 +12,7 @@ export function Slider({content, theme, setValue}: SliderContentType) {
 
   const [current, setCurrent] = useState(0);
   const length = content.length;
+  const aa = true;
 
   useEffect(() => {
     setValue(content[0])

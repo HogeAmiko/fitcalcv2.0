@@ -1,8 +1,19 @@
 .main {
-    background:#E5E5E5 url("../../assets/main.png") 300px 615px no-repeat ;
+    background:#E5E5E5 url("../../assets/main.png") 300px 615px no-repeat;
+    background-blend-mode: difference;
 }
 
 .mainDark {
     background:#000000 url("../../assets/mainDark.png") 300px 598px no-repeat ;
+    color: #FFFFFF;
+    background-blend-mode: difference;
+}
+
+.mainCalcBlock {
+    background:#E5E5E5;
+}
+
+.mainCalcBlockDark {
+    background:#000000;
     color: #FFFFFF;
 }

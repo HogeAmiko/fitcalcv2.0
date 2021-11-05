@@ -1,10 +1,16 @@
 @import '../../styles/sass/mixins';
 
+.main {
+    background:#E5E5E5 url("../../assets/main.png") -300px 615px no-repeat;
+    background-blend-mode: difference;
+}
+
 .discriptionBlock {
     background: url("../../assets/noise.png") 0 0/cover no-repeat rgba(241, 240, 232, 0.58);
     max-width: 825px;
     border-radius: 30px;
     margin-top: 27px;
+    margin-bottom: 50px;
 }
 
 .discriptionBlockBlack {
@@ -12,10 +18,11 @@
     max-width: 825px;
     border-radius: 30px;
     margin-top: 27px;
+    margin-bottom: 50px;
 }
 
 .discription {
-    padding: 67px 87px;
+    padding: 27px 87px;
 }
 
 .discription h1 {

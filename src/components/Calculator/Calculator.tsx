@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
 
 import { Slider } from '../Slider/Slider';
 import { FoodList } from '../FoodList/FoodList';
@@ -25,13 +25,13 @@ import foodCoverDark from '../../assets/foodCoverDark.png';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
 import { Preloader } from "../Preloader/Preloader";
+import { SliderForGender } from "../Slider/SliderForGender";
+import { ThemContext } from "../Main/Main";
 
 
-type themeCalculatorType = {
-  theme: boolean
-};
+export function Calculator() {
 
-export function Calculator(props: themeCalculatorType) {
+  const lightTheme = useContext(ThemContext);
 
   const dispatch = useDispatch();
   // @ts-ignore
@@ -52,6 +52,11 @@ export function Calculator(props: themeCalculatorType) {
     'Поддержать форму'
   ];
 
+  const selectGender = [
+    'Мужской',
+    'Женский'
+  ];
+
   const typeOfFoot = [
     'Кето',
     'Сбалансированный'
@@ -69,7 +74,7 @@ export function Calculator(props: themeCalculatorType) {
   const [errorWeight, setErrorWeight] = useState<string>('');
   const [age, setAge] = useState<string>('26');
   const [errorAge, setErrorAge] = useState<string>('');
-  const [sex, setSex] = useState<string>('');
+  const [gender, setGender] = useState<string>('');
   const [productName, setProductName] = useState<string>('');
   const [errorSearch, setErrorSearch] = useState<string>('initial');
   const [purpose, setPurpose] = useState<string>('');
@@ -77,8 +82,7 @@ export function Calculator(props: themeCalculatorType) {
   const [active, setActive] = useState<string>('');
   const [dragMode, setDragMode] = useState<boolean>(false);
   const [fetch, setFetch] = useState<0| 1| 2>(0);//0 - null, 1 - fetch, 2 - div
-
-  const lightTheme = props.theme;
+  const [result, setResult] = useState<boolean>(false);
 
   const onChangeGrowthHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setErrorGrowth('')
@@ -113,14 +117,6 @@ export function Calculator(props: themeCalculatorType) {
     }
   };
 
-  const onChangeSexHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-    setSex(e.currentTarget.value)
-  };
-
-  useEffect(() => {
-    setSex('men')
-  }, []);
-
   const filterProductsValue = (e: ChangeEvent<HTMLInputElement>) => {
     setProductName(e.currentTarget.value)
     setErrorSearch('')
@@ -129,7 +125,7 @@ export function Calculator(props: themeCalculatorType) {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    alert(['growth:' + growth, 'weight:' + weight, 'age:' + age, 'sex:' + sex, 'purpose:' + purpose, 'type:' + type, 'active:' + active, 'selectProducts:' + finalProducts.map(p => p.name)]);
+    alert(['growth:' + growth, 'weight:' + weight, 'age:' + age, 'sex:' + gender, 'purpose:' + purpose, 'type:' + type, 'active:' + active, 'selectProducts:' + finalProducts.map(p => p.name)]);
     setFetch(1)
     foods.map((p) => {
       return (
@@ -166,7 +162,7 @@ export function Calculator(props: themeCalculatorType) {
                   <h1 className={style.title}>Расчет рациона питания</h1>
                 </div>
                 <div className={lightTheme ? style.howToUse : style.howToUseDark}>
-                  <img src={lightTheme ? howToUseCover : howToUseCoverDark} className={style.howToUseCover}
+                  <img src={lightTheme ? howToUseCover : howToUseCoverDark} className={lightTheme ? style.howToUseCover : style.howToUseCoverDark}
                        alt={'block-cover'}/>
                   <div className={style.howToUseBlock}>
                     <h1>Как пользоваться</h1>
@@ -191,8 +187,6 @@ export function Calculator(props: themeCalculatorType) {
                            placeholder={'Поиск'}
                            className={lightTheme ? style.searchInput : style.searchInputDark}/>
                     <SearchIcon className={style.searchIcon}/>
-                    {errorSearch && errorSearch !== 'initial' ?
-                      <div className={style.errorSearch}>{errorSearch}</div> : null}
                   </div>
                 </div>
                 <div className={lightTheme ? style.selectFood : style.selectFoodDark}>
@@ -237,12 +231,7 @@ export function Calculator(props: themeCalculatorType) {
                       </div>
                       <div className={style.weight}>
                         <span>Пол</span>
-                        <label htmlFor={'sex'}/>
-                        <select className={lightTheme ? style.selectSex : style.selectSexDark}
-                                onChange={onChangeSexHandler}>
-                          <option id={'men'} value={'men'}>Мужской</option>
-                          <option id={'women'} value={'women'}>Женский</option>
-                        </select>
+                        <SliderForGender content={selectGender} setValue={setGender} theme={lightTheme}/>
                       </div>
                     </div>
                     <div className={style.yourPurpose}>
@@ -284,8 +273,10 @@ export function Calculator(props: themeCalculatorType) {
             </div>
             <img src={lightTheme ? coverBtnUp : coverBtnDarkUp} className={style.imgBtnRight} alt={'btn-cover'}/>
             <img src={lightTheme ? coverBtnDown : coverBtnDarkDown} className={style.imgBtnLeft} alt={'btn-cover'}/>
-            <button type={'submit'} className={lightTheme ? style.btnComplete : style.btnCompleteDark}>РАССЧИТАТЬ
+            <button type={'submit'} className={lightTheme ? style.btnComplete : style.btnCompleteDark}
+                    onClick={()=>setResult(true)}>РАССЧИТАТЬ
             </button>
+            {result ?
             <div className={style.finalBlock}>
               <div className={style.leftBlock}>
                 <div className={lightTheme ? style.dietFinal : style.dietFinalDark}>
@@ -343,6 +334,7 @@ export function Calculator(props: themeCalculatorType) {
                 }
               </div>
             </div>
+                : null}
           </form>
         </>
       </DndProvider>

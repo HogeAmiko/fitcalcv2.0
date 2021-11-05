@@ -5,12 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from "./redux/store";
+// @ts-ignore
+import { HashRouter } from "react-router-dom";
 
 
-ReactDOM.render(<Provider store={store}>
-    <App/>
-  </Provider>,
-  document.getElementById('root'));
+ReactDOM.render(
+        <Provider store={store}>
+            <HashRouter basename={'/'}>
+            <App/>
+            </HashRouter>
+        </Provider>,
+    document.getElementById('root'));
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
